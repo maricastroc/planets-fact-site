@@ -10,6 +10,8 @@ import {
   TextContainer,
 } from './styles'
 import { ItemList } from './components/ItemList'
+import { NavBar } from './components/NavBar'
+import { useState } from 'react'
 
 interface PlanetCardProps {
   name: string
@@ -23,10 +25,16 @@ interface PlanetCardProps {
 }
 
 export function PlanetCard(props: PlanetCardProps) {
+  const [rotateImage, setRotateImage] = useState(false)
   return (
     <Container>
+      <NavBar title={props.name} />
       <ImageContainer>
-        <img src={props.img_planet} alt="" />
+        <img
+          className={rotateImage ? 'active' : ''}
+          src={props.img_planet}
+          alt=""
+          onClick={() => setRotateImage(!rotateImage)}/>
       </ImageContainer>
       <TextContainer>
         <Heading>{props.name}</Heading>
