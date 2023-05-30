@@ -34,7 +34,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme['bg-color']};
+    background-color: ${(props) => props.theme['bg-color']};
+    background-image: url('/assets/background-stars.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: ${(props) => props.theme['base-text']};
     -webkit-font-smoothing: antialiased;
   }

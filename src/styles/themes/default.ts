@@ -16,5 +16,14 @@ export const defaultTheme = {
   'uranus-color': '#1ec2a4',
   'neptune-color': '#2d68f0',
 
+  'mercury-label': '#DEF4FC',
+  'venus-label': '#F7CC7F',
+  'earth-label': '#545BFE',
+  'mars-label': '#FF6A45',
+  'jupiter-label': '#ECAD7A',
+  'saturn-label': '#FCCB6B',
+  'uranus-label': '#65F0D5',
+  'neptune-label': '#497EFA',
+
   '@font-face': fontFaces,
 }
