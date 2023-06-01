@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   margin-top: 1.2rem;
-  padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 6.125rem;
@@ -10,28 +9,59 @@ export const Container = styled.div`
   align-items: center;
 `
 
+export const Navbar = styled.div`
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+
+export const TextNavbar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 100%;
+  padding: 0 1.5rem;
+  gap: 2.3rem;
+`
+
+export const Separator = styled.span`
+  width: 100%;
+  height: 0.01rem;
+  background-color: ${(props) => props.theme['dark-gray']};
+  opacity: 0.8;
+`
+
 export const ImageContainer = styled.div`
-  perspective: 100px;
-  transform-style: preserve-3d;
+  position: relative;
 
   img {
-    width: 6.93rem;
+    width: 11.5rem;
     height: auto;
-    transform-origin: center center;
 
-    &.active {
-      animation: rotateAnimation 10s infinite linear;
-      transform: translateZ(-2px);
+    &.slide-animation {
+      transition: transform 0.1s ease-in-out;
     }
 
-    @keyframes rotateAnimation {
-      0% {
-        transform: rotateY(0deg) translateZ(-2px);
-      }
-      100% {
-        transform: rotateY(360deg) translateZ(-2px);
-      }
+    &.slide-out {
+      transform: translateX(100%);
+      opacity: 0;
     }
+
+    &.slide-in {
+      transform: translateX(0%);
+    }
+  }
+`
+
+export const ImageContainerItem = styled.div`
+  position: absolute;
+  left: 26%;
+  top: 58%;
+
+  img {
+    width: 5.5rem;
+    height: auto;
   }
 `
 

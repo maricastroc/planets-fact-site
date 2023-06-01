@@ -3,12 +3,8 @@ import { createContext, ReactNode, useState } from 'react'
 interface PlanetsContextData {
   openList: boolean
   setOpenList: (value: boolean) => void
-  overviewActive: boolean
-  setOverviewActive: (value: boolean) => void
-  structureActive: boolean
-  setStructureActive: (value: boolean) => void
-  surfaceActive: boolean
-  setSurfaceActive: (value: boolean) => void
+  activeTheme: string
+  setActiveTheme: (value: string) => void
 }
 
 export const PlanetsContext = createContext<PlanetsContextData>(
@@ -22,20 +18,14 @@ interface PlanetsContextProviderProps {
 export function PlanetsContextProvider({
   children,
 }: PlanetsContextProviderProps) {
-  const [openList, setOpenList] = useState(false)
-  const [overviewActive, setOverviewActive] = useState(true)
-  const [structureActive, setStructureActive] = useState(false)
-  const [surfaceActive, setSurfaceActive] = useState(false)
+  const [openList, setOpenList] = useState<boolean>(false)
+  const [activeTheme, setActiveTheme] = useState<string>('overview')
 
   const PlanetsContextValue: PlanetsContextData = {
     openList,
     setOpenList,
-    overviewActive,
-    setOverviewActive,
-    structureActive,
-    setStructureActive,
-    surfaceActive,
-    setSurfaceActive,
+    activeTheme,
+    setActiveTheme,
   }
 
   return (

@@ -3,46 +3,72 @@ import {
   Container,
   Heading,
   ImageContainer,
+  ImageContainerItem,
   ItemsListContainer,
+  Navbar,
   Paragraph,
+  Separator,
   Source,
   SourceLink,
   TextContainer,
+  TextNavbar,
 } from './styles'
 import { ItemList } from './components/ItemList'
-import { NavBar } from './components/NavBar'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { PlanetsContext } from '../../contexts/PlanetsContext'
+import { PlanetDataProps } from '../../utils/getPlanetData'
+import { ButtonList } from './components/ButtonList'
 
-interface PlanetCardProps {
-  name: string
-  img_planet: string
-  content: string
-  source: string
-  rotation: string
-  revolution: string
-  radius: string
-  temperature: string
-}
+export function PlanetCard(props: PlanetDataProps) {
+  const { activeTheme } = useContext(PlanetsContext)
+  const renderImage = () => {
+    const { imgPlanet, imgInternal, imgGeology } = props
 
-export function PlanetCard(props: PlanetCardProps) {
-  const [rotateImage, setRotateImage] = useState(false)
+    if (activeTheme === 'surface') {
+      return (
+        <>
+          <img src={imgPlanet} alt="" />
+          <ImageContainerItem>
+            <img src={imgGeology} alt="" />
+          </ImageContainerItem>
+        </>
+      )
+    }
+
+    return (
+      <img src={activeTheme === 'structure' ? imgInternal : imgPlanet} alt="" />
+    )
+  }
+
   return (
     <Container>
-      <NavBar title={props.name} />
-      <ImageContainer>
-        <img
-          className={rotateImage ? 'active' : ''}
-          src={props.img_planet}
-          alt=""
-          onClick={() => setRotateImage(!rotateImage)}/>
-      </ImageContainer>
+      <Navbar>
+        <TextNavbar>
+          <ButtonList id={1} planet={props.name} theme="overview" />
+          <ButtonList id={2} planet={props.name} theme="structure" />
+          <ButtonList id={3} planet={props.name} theme="surface" />
+        </TextNavbar>
+        <Separator />
+      </Navbar>
+      <ImageContainer>{activeTheme && renderImage()}</ImageContainer>
       <TextContainer>
         <Heading>{props.name}</Heading>
-        <Paragraph>{props.content}</Paragraph>
+        <Paragraph>
+          {props[`${activeTheme}Content` as keyof PlanetDataProps] ||
+            props.geologyContent}
+        </Paragraph>
         <Source>
           <p>Source:</p>
           <SourceLink>
-            <a href={props.source} target="_blank" rel="noreferrer">
+            <a
+              href={
+                activeTheme !== 'surface'
+                  ? props[`${activeTheme}Source` as keyof PlanetDataProps]
+                  : props.geologySource
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
               Wikipedia
             </a>
             <ArrowSquareUpRight weight="fill" size={16} />

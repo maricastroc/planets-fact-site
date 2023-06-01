@@ -1,27 +1,13 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  margin-top: 0.3rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`
-
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 0 1.5rem;
-  gap: 2.3rem;
-`
-
-export const Item = styled.div`
+export const Button = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 `
 
-export const Label = styled.h3`
+export const Theme = styled.h3`
   font-size: 0.56rem;
   text-transform: uppercase;
   font-family: 'Spartan', sans-serif;
@@ -69,11 +55,4 @@ export const Target = styled.span`
       background-color: ${(props) => props.theme['neptune-color']};
     }
   }
-`
-
-export const Separator = styled.span`
-  width: 100%;
-  height: 0.01rem;
-  background-color: ${(props) => props.theme['dark-gray']};
-  opacity: 0.8;
 `
