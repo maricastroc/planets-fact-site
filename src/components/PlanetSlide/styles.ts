@@ -1,60 +1,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  max-width: 100vw;
   margin-top: 1.2rem;
   display: flex;
   flex-direction: column;
-  gap: 6.125rem;
+  gap: 4rem;
   justify-content: center;
   align-items: center;
 `
 
 export const ImageContainer = styled.div`
   position: relative;
-
-  .slide-left-enter {
-    transform: translateX(300%);
-    opacity: 0;
-  }
-
-  .slide-left-enter-active {
-    transform: translateX(50%);
-    opacity: 1;
-    transition: transform 600ms linear;
-  }
-
-  .slide-right-enter {
-    transform: translateX(-300%);
-    opacity: 3;
-  }
-
-  .slide-right-enter-active {
-    transform: translateX(-50%);
-    opacity: 1;
-    transition: transform 600ms linear;
-  }
-
-  .slide-left-exit {
-    transform: translateX(50%);
-    opacity: 1;
-  }
-
-  .slide-left-exit-active {
-    transform: translateX(-300%);
-    opacity: 0;
-    transition: transform 600ms linear;
-  }
-
-  .slide-right-exit {
-    transform: translateX(-50%);
-    opacity: 1;
-  }
-
-  .slide-right-exit-active {
-    transform: translateX(300%);
-    opacity: 0;
-    transition: transform 600ms linear;
-  }
 
   img {
     width: 11.5rem;
@@ -63,15 +20,6 @@ export const ImageContainer = styled.div`
 `
 
 export const ImageContainerSurface = styled.div`
-  position: relative;
-
-  img {
-    width: 11.5rem;
-    height: auto;
-  }
-`
-
-export const ImageContainerSurfaceChild = styled.div`
   position: absolute;
   left: 26%;
   top: 58%;
@@ -87,15 +35,7 @@ export const TextContainer = styled.div`
   flex-direction: column;
   text-align: center;
   gap: 1.5rem;
-  padding: 0 1.5rem;
-`
-
-export const ItemsListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  margin-bottom: 2.96rem;
+  max-width: 100vw;
   padding: 0 1.5rem;
 `
 

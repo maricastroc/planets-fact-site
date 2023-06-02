@@ -6,6 +6,10 @@ export const Button = styled.div`
   justify-content: center;
   text-align: center;
   cursor: pointer;
+
+  @media (min-width: 698px) {
+    display: none;
+  }
 `
 
 export const Theme = styled.h3`

@@ -8,4 +8,8 @@ export const Container = styled.div`
   margin: 2.75rem 0 0;
   padding: 0 1.5rem;
   width: 100%;
+
+  @media (min-width: 698px) {
+    display: none;
+  }
 `

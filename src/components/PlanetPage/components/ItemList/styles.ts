@@ -14,7 +14,7 @@ export const Paragraph = styled.p`
   text-transform: uppercase;
   font-size: 0.5rem;
   font-family: 'Spartan', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   opacity: 0.5;
 `
 
