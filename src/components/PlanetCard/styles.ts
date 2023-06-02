@@ -9,52 +9,47 @@ export const Container = styled.div`
   align-items: center;
 `
 
-export const Navbar = styled.div`
-  margin-top: 0.3rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`
-
-export const TextNavbar = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  min-width: 100%;
-  padding: 0 1.5rem;
-  gap: 2.3rem;
-`
-
-export const Separator = styled.span`
-  width: 100%;
-  height: 0.01rem;
-  background-color: ${(props) => props.theme['dark-gray']};
-  opacity: 0.8;
-`
-
 export const ImageContainer = styled.div`
+  position: relative;
+
+  .slide-enter {
+    transform: translateX(300%);
+    opacity: 0;
+  }
+
+  .slide-enter-active {
+    transform: translateX(50%);
+    opacity: 1;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .slide-exit {
+    transform: translateX(50%);
+    opacity: 1;
+  }
+
+  .slide-exit-active {
+    transform: translateX(-300%);
+    opacity: 0;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  img {
+    width: 11.5rem;
+    height: auto;
+  }
+`
+
+export const ImageContainerSurface = styled.div`
   position: relative;
 
   img {
     width: 11.5rem;
     height: auto;
-
-    &.slide-animation {
-      transition: transform 0.1s ease-in-out;
-    }
-
-    &.slide-out {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-
-    &.slide-in {
-      transform: translateX(0%);
-    }
   }
 `
 
-export const ImageContainerItem = styled.div`
+export const ImageContainerSurfaceChild = styled.div`
   position: absolute;
   left: 26%;
   top: 58%;

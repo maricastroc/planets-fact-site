@@ -3,7 +3,6 @@ import { Button, Theme, Target } from './styles'
 import { PlanetsContext } from '../../../../contexts/PlanetsContext'
 
 interface ButtonListProps {
-  id: number
   theme: string
   planet: string
 }

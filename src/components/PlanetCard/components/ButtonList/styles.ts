@@ -5,6 +5,7 @@ export const Button = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 `
 
 export const Theme = styled.h3`

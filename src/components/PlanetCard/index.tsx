@@ -1,36 +1,38 @@
 import { ArrowSquareUpRight } from 'phosphor-react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import {
   Container,
   Heading,
   ImageContainer,
-  ImageContainerItem,
+  ImageContainerSurface,
+  ImageContainerSurfaceChild,
   ItemsListContainer,
-  Navbar,
   Paragraph,
-  Separator,
   Source,
   SourceLink,
   TextContainer,
-  TextNavbar,
 } from './styles'
 import { ItemList } from './components/ItemList'
 import { useContext } from 'react'
 import { PlanetsContext } from '../../contexts/PlanetsContext'
 import { PlanetDataProps } from '../../utils/getPlanetData'
-import { ButtonList } from './components/ButtonList'
+import { NavBar } from './components/NavBar'
 
 export function PlanetCard(props: PlanetDataProps) {
   const { activeTheme } = useContext(PlanetsContext)
+
   const renderImage = () => {
     const { imgPlanet, imgInternal, imgGeology } = props
 
     if (activeTheme === 'surface') {
       return (
         <>
-          <img src={imgPlanet} alt="" />
-          <ImageContainerItem>
-            <img src={imgGeology} alt="" />
-          </ImageContainerItem>
+          <ImageContainerSurface>
+            <img src={imgPlanet} alt="" />
+            <ImageContainerSurfaceChild>
+              <img src={imgGeology} alt="" />
+            </ImageContainerSurfaceChild>
+          </ImageContainerSurface>
         </>
       )
     }
@@ -42,15 +44,19 @@ export function PlanetCard(props: PlanetDataProps) {
 
   return (
     <Container>
-      <Navbar>
-        <TextNavbar>
-          <ButtonList id={1} planet={props.name} theme="overview" />
-          <ButtonList id={2} planet={props.name} theme="structure" />
-          <ButtonList id={3} planet={props.name} theme="surface" />
-        </TextNavbar>
-        <Separator />
-      </Navbar>
-      <ImageContainer>{activeTheme && renderImage()}</ImageContainer>
+      <NavBar planet={props.name} />
+      <ImageContainer>
+        <TransitionGroup>
+          <CSSTransition
+            key={activeTheme}
+            classNames="slide"
+            timeout={200} // Tempo de duração da animação em milissegundos
+            unmountOnExit
+          >
+            {renderImage()}
+          </CSSTransition>
+        </TransitionGroup>
+      </ImageContainer>
       <TextContainer>
         <Heading>{props.name}</Heading>
         <Paragraph>
