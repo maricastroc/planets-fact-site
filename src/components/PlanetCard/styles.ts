@@ -12,26 +12,48 @@ export const Container = styled.div`
 export const ImageContainer = styled.div`
   position: relative;
 
-  .slide-enter {
+  .slide-left-enter {
     transform: translateX(300%);
     opacity: 0;
   }
 
-  .slide-enter-active {
+  .slide-left-enter-active {
     transform: translateX(50%);
     opacity: 1;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 600ms linear;
   }
 
-  .slide-exit {
+  .slide-right-enter {
+    transform: translateX(-300%);
+    opacity: 3;
+  }
+
+  .slide-right-enter-active {
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: transform 600ms linear;
+  }
+
+  .slide-left-exit {
     transform: translateX(50%);
     opacity: 1;
   }
 
-  .slide-exit-active {
+  .slide-left-exit-active {
     transform: translateX(-300%);
     opacity: 0;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 600ms linear;
+  }
+
+  .slide-right-exit {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  .slide-right-exit-active {
+    transform: translateX(300%);
+    opacity: 0;
+    transition: transform 600ms linear;
   }
 
   img {

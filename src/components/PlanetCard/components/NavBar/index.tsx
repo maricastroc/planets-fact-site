@@ -9,9 +9,9 @@ export function NavBar(props: NavBarProps) {
   return (
     <Container>
       <TextContainer>
-        <ButtonList planet={props.planet} theme="overview" />
-        <ButtonList planet={props.planet} theme="structure" />
-        <ButtonList planet={props.planet} theme="surface" />
+        <ButtonList id={1} planet={props.planet} theme="overview" />
+        <ButtonList id={2} planet={props.planet} theme="structure" />
+        <ButtonList id={3} planet={props.planet} theme="surface" />
       </TextContainer>
       <Separator />
     </Container>

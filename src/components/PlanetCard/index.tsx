@@ -19,7 +19,7 @@ import { PlanetDataProps } from '../../utils/getPlanetData'
 import { NavBar } from './components/NavBar'
 
 export function PlanetCard(props: PlanetDataProps) {
-  const { activeTheme } = useContext(PlanetsContext)
+  const { activeTheme, slideLeft } = useContext(PlanetsContext)
 
   const renderImage = () => {
     const { imgPlanet, imgInternal, imgGeology } = props
@@ -28,9 +28,17 @@ export function PlanetCard(props: PlanetDataProps) {
       return (
         <>
           <ImageContainerSurface>
-            <img src={imgPlanet} alt="" />
+            <img
+              src={imgPlanet}
+              alt=""
+              className={slideLeft ? 'slide-left' : 'slide-right'}
+            />
             <ImageContainerSurfaceChild>
-              <img src={imgGeology} alt="" />
+              <img
+                src={imgGeology}
+                alt=""
+                className={slideLeft ? 'slide-left' : 'slide-right'}
+              />
             </ImageContainerSurfaceChild>
           </ImageContainerSurface>
         </>
@@ -38,7 +46,11 @@ export function PlanetCard(props: PlanetDataProps) {
     }
 
     return (
-      <img src={activeTheme === 'structure' ? imgInternal : imgPlanet} alt="" />
+      <img
+        src={activeTheme === 'structure' ? imgInternal : imgPlanet}
+        alt=""
+        className={slideLeft ? 'slide-left' : 'slide-right'}
+      />
     )
   }
 
@@ -49,8 +61,8 @@ export function PlanetCard(props: PlanetDataProps) {
         <TransitionGroup>
           <CSSTransition
             key={activeTheme}
-            classNames="slide"
-            timeout={200} // Tempo de duração da animação em milissegundos
+            classNames={slideLeft ? 'slide-left' : 'slide-right'}
+            timeout={600} // Tempo de duração da animação em milissegundos
             unmountOnExit
           >
             {renderImage()}
