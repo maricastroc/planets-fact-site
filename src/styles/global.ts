@@ -41,6 +41,10 @@ export const GlobalStyle = createGlobalStyle`
     background-repeat: repeat;
     color: ${(props) => props.theme['base-text']};
     -webkit-font-smoothing: antialiased;
+
+    @media (min-width: 698px) {
+      background-size: 100%;
+    }
   }
 
   body, input, textarea, button {
