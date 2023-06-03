@@ -8,6 +8,10 @@ export const Container = styled.div`
   gap: 4rem;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 698px) {
+    gap: 7rem;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -16,6 +20,13 @@ export const ImageContainer = styled.div`
   img {
     width: 11.5rem;
     height: auto;
+  }
+
+  @media (min-width: 698px) {
+    img {
+      width: 23rem;
+      height: auto;
+    }
   }
 `
 
@@ -28,6 +39,29 @@ export const ImageContainerSurface = styled.div`
     width: 5.5rem;
     height: auto;
   }
+
+  @media (min-width: 698px) {
+    left: 33%;
+    top: 70%;
+
+    img {
+      width: 8rem;
+      height: auto;
+    }
+  }
+`
+
+export const TextWrapper = styled.div`
+  display: flex;
+
+  @media (min-width: 698px) {
+    display: flex;
+    flex-direction: row;
+    gap: 4.375rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+  }
 `
 
 export const TextContainer = styled.div`
@@ -37,6 +71,11 @@ export const TextContainer = styled.div`
   gap: 1.5rem;
   max-width: 100vw;
   padding: 0 1.5rem;
+
+  @media (min-width: 698px) {
+    text-align: left;
+    max-width: 50%;
+  }
 `
 
 export const Heading = styled.h2`
@@ -66,6 +105,11 @@ export const Source = styled.div`
   p {
     opacity: 0.6;
   }
+
+  @media (min-width: 698px) {
+    align-items: start;
+    justify-content: flex-start;
+  }
 `
 
 export const SourceLink = styled.div`
@@ -87,5 +131,17 @@ export const SourceLink = styled.div`
   svg {
     color: ${(props) => props.theme['base-text']};
     margin-top: -0.15rem;
+  }
+`
+
+export const ButtonsContainer = styled.div`
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 698px) {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
   }
 `

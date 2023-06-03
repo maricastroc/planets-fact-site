@@ -13,11 +13,26 @@ import { PlanetDataProps } from '../../utils/getPlanetData'
 import useEmblaCarousel from 'embla-carousel-react'
 import { PlanetSlide } from '../PlanetSlide'
 import { BtnMobile } from './components/BtnMobile'
+import { BtnDesktop } from './components/BtnDesktop'
 
 export function PlanetPage(props: PlanetDataProps) {
   const { setActiveTheme } = useContext(PlanetsContext)
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
   const buttonMobile = ['overview', 'structure', 'surface']
+  const buttonDesktop = [
+    {
+      position: '01',
+      title: 'overview',
+      theme: 'overview',
+    },
+    { position: '02', title: 'internal stucture', theme: 'structure' },
+    {
+      position: '03',
+      title: 'surface geology',
+      theme: 'surface',
+    },
+  ]
+
   return (
     <Container>
       <Navbar>
@@ -45,6 +60,19 @@ export function PlanetPage(props: PlanetDataProps) {
               image_geology={props.imgGeology}
               content={props.overviewContent}
               source={props.overviewSource}
+              btn_desktop={buttonDesktop.map((button, index) => (
+                <BtnDesktop
+                  key={index}
+                  onChosen={() => {
+                    setActiveTheme(button.theme)
+                    emblaApi?.scrollTo(index)
+                  }}
+                  position={button.position}
+                  theme={button.theme}
+                  planet={props.name.toLowerCase()}
+                  title={button.title}
+                />
+              ))}
             />
           </div>
           <div className="embla__slide">
@@ -54,6 +82,19 @@ export function PlanetPage(props: PlanetDataProps) {
               image_geology={props.imgGeology}
               content={props.structureContent}
               source={props.structureSource}
+              btn_desktop={buttonDesktop.map((button, index) => (
+                <BtnDesktop
+                  key={index}
+                  onChosen={() => {
+                    setActiveTheme(button.theme)
+                    emblaApi?.scrollTo(index)
+                  }}
+                  position={button.position}
+                  theme={button.theme}
+                  planet={props.name.toLowerCase()}
+                  title={button.title}
+                />
+              ))}
             />
           </div>
           <div className="embla__slide">
@@ -63,6 +104,19 @@ export function PlanetPage(props: PlanetDataProps) {
               image_geology={props.imgGeology}
               content={props.geologyContent}
               source={props.geologySource}
+              btn_desktop={buttonDesktop.map((button, index) => (
+                <BtnDesktop
+                  key={index}
+                  onChosen={() => {
+                    setActiveTheme(button.theme)
+                    emblaApi?.scrollTo(index)
+                  }}
+                  theme={button.theme}
+                  position={button.position}
+                  planet={props.name.toLowerCase()}
+                  title={button.title}
+                />
+              ))}
             />
           </div>
         </div>

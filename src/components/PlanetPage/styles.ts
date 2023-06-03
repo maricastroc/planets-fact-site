@@ -8,6 +8,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 100vw;
+
+  @media (min-width: 698px) {
+    gap: 2rem;
+  }
 `
 
 export const Navbar = styled.div`
@@ -40,12 +44,17 @@ export const EmblaContainer = styled.div`
     display: flex;
     max-width: 100vw;
   }
+
   .embla__slide {
     flex: 0 0 100%;
     max-width: 100vw;
     a {
       pointer-events: initial;
     }
+  }
+
+  @media (min-width: 698px) {
+    pointer-events: initial;
   }
 `
 

@@ -1,6 +1,7 @@
 import { ArrowSquareUpRight } from 'phosphor-react'
-import { useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 import {
+  ButtonsContainer,
   Container,
   Heading,
   ImageContainer,
@@ -9,6 +10,7 @@ import {
   Source,
   SourceLink,
   TextContainer,
+  TextWrapper,
 } from './styles'
 import { PlanetsContext } from '../../contexts/PlanetsContext'
 
@@ -18,10 +20,13 @@ interface PlanetSlideProps {
   source: string
   image: string
   image_geology: string
+  btn_desktop: ReactNode
 }
 
 export function PlanetSlide(props: PlanetSlideProps) {
   const { activeTheme } = useContext(PlanetsContext)
+
+  console.log(activeTheme)
   return (
     <Container>
       <ImageContainer>
@@ -32,19 +37,22 @@ export function PlanetSlide(props: PlanetSlideProps) {
           </ImageContainerSurface>
         )}
       </ImageContainer>
-      <TextContainer>
-        <Heading>{props.title}</Heading>
-        <Paragraph>{props.content}</Paragraph>
-        <Source>
-          <p>Source:</p>
-          <SourceLink>
-            <a href={props.source} target="_blank" rel="noreferrer">
-              Wikipedia
-            </a>
-            <ArrowSquareUpRight weight="fill" size={16} />
-          </SourceLink>
-        </Source>
-      </TextContainer>
+      <TextWrapper>
+        <TextContainer>
+          <Heading>{props.title}</Heading>
+          <Paragraph>{props.content}</Paragraph>
+          <Source>
+            <p>Source:</p>
+            <SourceLink>
+              <a href={props.source} target="_blank" rel="noreferrer">
+                Wikipedia
+              </a>
+              <ArrowSquareUpRight weight="fill" size={16} />
+            </SourceLink>
+          </Source>
+        </TextContainer>
+        <ButtonsContainer>{props.btn_desktop}</ButtonsContainer>
+      </TextWrapper>
     </Container>
   )
 }
