@@ -14,8 +14,7 @@ export const Button = styled.button`
     display: flex;
 
     &.active {
-      border: 1px solid;
-      border-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid transparent;
 
       &.mercury {
         background-color: ${(props) => props.theme['mercury-color']};
@@ -49,6 +48,22 @@ export const Button = styled.button`
         background-color: ${(props) => props.theme['neptune-color']};
       }
     }
+
+    @media (min-width: 1015px) {
+      padding: 1rem 1.25rem;
+      transition: 300ms;
+      width: 21.875rem;
+
+      &.active {
+        border: 1px solid;
+        border-color: transparent;
+      }
+
+      &:hover {
+        border: 1px solid transparent;
+        background-color: ${(props) => props.theme['dark-gray']};
+      }
+    }
   }
 `
 
@@ -57,6 +72,12 @@ export const TextContainer = styled.div`
   align-items: center;
   gap: 0.875rem;
   text-transform: uppercase;
+
+  @media (min-width: 1015px) {
+    &.hover {
+      background-color: ${(props) => props.theme['light-gray']};
+    }
+  }
 `
 
 export const Number = styled.p`
@@ -65,6 +86,10 @@ export const Number = styled.p`
   font-weight: 700;
   letter-spacing: 0.15rem;
   opacity: 0.5;
+
+  @media (min-width: 1015px) {
+    font-size: 0.75rem;
+  }
 `
 
 export const Label = styled.p`
@@ -73,4 +98,8 @@ export const Label = styled.p`
   font-weight: 700;
   letter-spacing: 0.15rem;
   opacity: 0.9;
+
+  @media (min-width: 1015px) {
+    font-size: 0.75rem;
+  }
 `

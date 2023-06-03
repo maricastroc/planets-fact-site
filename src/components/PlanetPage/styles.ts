@@ -10,6 +10,7 @@ export const Container = styled.div`
   max-width: 100vw;
 
   @media (min-width: 698px) {
+    margin-top: 0;
     gap: 2rem;
   }
 `
@@ -54,7 +55,10 @@ export const EmblaContainer = styled.div`
   }
 
   @media (min-width: 698px) {
-    pointer-events: initial;
+    pointer-events: none;
+    button {
+      pointer-events: initial;
+    }
   }
 `
 
@@ -72,6 +76,20 @@ export const ItemsListContainer = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0 2.5rem;
   margin-bottom: 2.96rem;
+
+  @media (min-width: 698px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1015px) {
+    max-width: 68rem;
+    padding: 1.5rem 3rem 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 1.875rem;
+  }
 `

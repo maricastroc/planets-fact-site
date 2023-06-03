@@ -4,6 +4,15 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media (min-width: 1015px) {
+    width: 100%;
+    padding: 1.5rem 3rem 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const Container = styled.div`
@@ -17,6 +26,11 @@ export const Container = styled.div`
     justify-content: center;
     padding: 1.5rem 1.5rem 1rem;
   }
+
+  @media (min-width: 1015px) {
+    width: 100%;
+    padding: 0;
+  }
 `
 
 export const Heading = styled.h1`
@@ -24,6 +38,15 @@ export const Heading = styled.h1`
   font-family: 'Antonio', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
+  width: 100%;
+
+  @media (min-width: 698px) {
+    text-align: center;
+  }
+
+  @media (min-width: 1015px) {
+    text-align: left;
+  }
 `
 export const IconContainer = styled.div`
   svg {
@@ -67,8 +90,17 @@ export const DesktopPlanetsContainer = styled.div`
   }
 
   @media (min-width: 698px) {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 1015px) {
+    margin-top: 1rem;
+    align-self: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 0;
   }
 `
