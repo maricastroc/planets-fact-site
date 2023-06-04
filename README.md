@@ -1,6 +1,6 @@
 # Planets-Fact-Site
 <p align="center">
-    <img alt="Print" src="/assets/print.png" width="800px" />
+    <img alt="Print" src="/public/assets/print.png" width="800px" />
 </p>
 
 <br/>
