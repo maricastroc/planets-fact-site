@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   @media (min-width: 698px) {
     margin-top: 0;
-    gap: 2rem;
+    gap: 6rem;
   }
 `
 
@@ -82,11 +82,13 @@ export const ItemsListContainer = styled.div`
 
   @media (min-width: 698px) {
     flex-direction: row;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   @media (min-width: 1015px) {
     max-width: 68rem;
-    padding: 1.5rem 3rem 1.5rem;
+    padding: 1.5rem 3rem 0;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

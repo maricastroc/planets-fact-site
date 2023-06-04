@@ -18,10 +18,10 @@ export const OptionContainer = styled.p`
     &::before {
       content: ''; /* Adicione o conteúdo vazio para que o pseudo-elemento seja renderizado */
       position: absolute;
-      top: -45px; /* Ajuste a distância desejada da linha superior */
+      top: 29px; /* Ajuste a distância desejada da linha superior */
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 3px;
       background-color: transparent;
     }
 
@@ -76,5 +76,17 @@ export const OptionContainer = styled.p`
 
   @media (min-width: 698px) {
     display: flex;
+  }
+
+  @media (min-width: 1015px) {
+    &:hover,
+    &.active {
+      opacity: 1;
+
+      &::before {
+        height: 5px;
+        top: -45px; /* Ajuste a distância desejada da linha superior */
+      }
+    }
   }
 `
