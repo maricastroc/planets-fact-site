@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Button = styled.div`
+export const Button = styled.button`
   display: none;
   padding: 0.8rem 1.25rem;
   background-color: transparent;
@@ -67,7 +67,7 @@ export const Button = styled.div`
   }
 `
 
-export const TextContainer = styled.div`
+export const TextContainer = styled.span`
   display: flex;
   align-items: center;
   gap: 0.875rem;
