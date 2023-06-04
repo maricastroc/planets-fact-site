@@ -5,8 +5,8 @@ interface PlanetsContextData {
   setOpenList: (value: boolean) => void
   activeTheme: string
   setActiveTheme: (value: string) => void
-  slideLeft: boolean
-  setSlideLeft: (value: boolean) => void
+  currentPage: string
+  setCurrentPage: (value: string) => void
 }
 
 export const PlanetsContext = createContext<PlanetsContextData>(
@@ -22,15 +22,15 @@ export function PlanetsContextProvider({
 }: PlanetsContextProviderProps) {
   const [openList, setOpenList] = useState<boolean>(false)
   const [activeTheme, setActiveTheme] = useState<string>('overview')
-  const [slideLeft, setSlideLeft] = useState(false)
+  const [currentPage, setCurrentPage] = useState('mercury')
 
   const PlanetsContextValue: PlanetsContextData = {
     openList,
     setOpenList,
     activeTheme,
     setActiveTheme,
-    slideLeft,
-    setSlideLeft,
+    currentPage,
+    setCurrentPage,
   }
 
   return (

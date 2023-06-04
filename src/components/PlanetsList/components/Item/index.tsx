@@ -19,17 +19,17 @@ interface ItemProps {
   route: string
 }
 
-export function Item(props: ItemProps) {
+export function Item({ title, labelColor, route }: ItemProps) {
   const { setOpenList } = useContext(PlanetsContext)
 
   return (
     <ItemContainer onClick={() => setOpenList(false)}>
-      <NavLink to={`/${props.route}`} title={props.title}>
+      <NavLink to={`/${route}`} title={title}>
         <Wrapper>
           <Content>
             <TextContainer>
-              <Label className={props.labelColor} />
-              <Title>{props.title}</Title>
+              <Label className={labelColor} />
+              <Title>{title}</Title>
             </TextContainer>
             <IconContainer>
               <CaretRight size={14} />

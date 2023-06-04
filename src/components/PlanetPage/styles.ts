@@ -31,7 +31,7 @@ export const Navlabels = styled.div`
 `
 
 export const Separator = styled.span`
-  width: 100%;
+  width: 100vw;
   height: 0.01rem;
   background-color: ${(props) => props.theme['dark-gray']};
   opacity: 0.8;
@@ -40,6 +40,7 @@ export const Separator = styled.span`
 export const EmblaContainer = styled.div`
   overflow: hidden;
   pointer-events: none;
+  max-width: 100vw;
 
   .embla__container {
     display: flex;

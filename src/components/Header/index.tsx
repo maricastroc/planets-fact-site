@@ -9,7 +9,7 @@ import {
 } from './styles'
 import { List } from 'phosphor-react'
 import { PlanetsContext } from '../../contexts/PlanetsContext'
-import { planets } from '../../utils/getPlanetData'
+import { planets } from '../../utils/getAllPlanets'
 import { OptionPlanet } from './components/Option'
 
 export function Header() {

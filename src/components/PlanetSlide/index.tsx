@@ -19,39 +19,46 @@ interface PlanetSlideProps {
   content: string
   source: string
   image: string
-  image_geology: string
-  btn_desktop: ReactNode
+  imageGeology: string
+  btnDesktop: ReactNode
 }
 
-export function PlanetSlide(props: PlanetSlideProps) {
+export function PlanetSlide({
+  title,
+  content,
+  source,
+  image,
+  imageGeology,
+  btnDesktop,
+}: PlanetSlideProps) {
   const { activeTheme } = useContext(PlanetsContext)
 
   console.log(activeTheme)
   return (
     <Container>
       <ImageContainer>
-        <img src={props.image} alt="" />
+        <img src={image} alt="" />
         {activeTheme === 'surface' && (
           <ImageContainerSurface>
-            <img src={props.image_geology} alt="" />
+            <img src={imageGeology} alt="" />
           </ImageContainerSurface>
         )}
       </ImageContainer>
       <TextWrapper>
         <TextContainer>
-          <Heading>{props.title}</Heading>
-          <Paragraph>{props.content}</Paragraph>
+          <Heading>{title}</Heading>
+          <Paragraph>{content}</Paragraph>
           <Source>
             <p>Source:</p>
             <SourceLink>
-              <a href={props.source} target="_blank" rel="noreferrer">
+              <a href={source} target="_blank" rel="noreferrer">
                 Wikipedia
               </a>
               <ArrowSquareUpRight weight="fill" size={16} />
             </SourceLink>
           </Source>
         </TextContainer>
-        <ButtonsContainer>{props.btn_desktop}</ButtonsContainer>
+        <ButtonsContainer>{btnDesktop}</ButtonsContainer>
       </TextWrapper>
     </Container>
   )

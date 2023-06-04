@@ -34,6 +34,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    overflow-x: hidden;
+    max-width: 100vw;
     background-color: ${(props) => props.theme['bg-color']};
     background-image: url('/assets/background-stars.svg');
     background-size: 170%;

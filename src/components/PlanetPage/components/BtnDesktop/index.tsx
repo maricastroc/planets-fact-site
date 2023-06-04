@@ -10,7 +10,13 @@ export interface BtnDesktopProps {
   onChosen: () => void
 }
 
-export function BtnDesktop(props: BtnDesktopProps) {
+export function BtnDesktop({
+  position,
+  title,
+  theme,
+  planet,
+  onChosen,
+}: BtnDesktopProps) {
   const { activeTheme } = useContext(PlanetsContext)
 
   console.log(activeTheme)
@@ -18,13 +24,13 @@ export function BtnDesktop(props: BtnDesktopProps) {
   return (
     <Button
       className={`${
-        activeTheme === props.theme ? 'active' : ''
-      } ${props.planet.toLowerCase()}`}
-      onClick={() => props.onChosen()}
+        activeTheme === theme ? 'active' : ''
+      } ${planet.toLowerCase()}`}
+      onClick={() => onChosen()}
     >
       <TextContainer>
-        <Number>{props.position}</Number>
-        <Label>{props.title}</Label>
+        <Number>{position}</Number>
+        <Label>{title}</Label>
       </TextContainer>
     </Button>
   )

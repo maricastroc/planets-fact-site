@@ -18,7 +18,7 @@ export const Container = styled.div`
 
   @media (min-width: 1015px) {
     padding: 1.25rem 1.25rem;
-    width: clamp(10rem, 20vw, 12.7rem);
+    width: clamp(10rem, 20vw, 13.1rem);
   }
 `
 

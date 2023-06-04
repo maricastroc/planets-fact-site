@@ -8,16 +8,16 @@ interface BtnMobileProps {
   onChosen: () => void
 }
 
-export function BtnMobile(props: BtnMobileProps) {
+export function BtnMobile({ title, planet, onChosen }: BtnMobileProps) {
   const { activeTheme } = useContext(PlanetsContext)
 
   return (
-    <Button onClick={() => props.onChosen()}>
-      <Theme>{props.title}</Theme>
+    <Button onClick={() => onChosen()}>
+      <Theme>{title}</Theme>
       <Target
         className={`${
-          activeTheme === props.title ? 'active' : ''
-        } ${props.planet.toLowerCase()}`}
+          activeTheme === title ? 'active' : ''
+        } ${planet.toLowerCase()}`}
       />
     </Button>
   )

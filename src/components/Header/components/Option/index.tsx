@@ -8,15 +8,25 @@ interface OptionPlanetProps {
   route: string
 }
 
-export function OptionPlanet(props: OptionPlanetProps) {
-  const { setActiveTheme } = useContext(PlanetsContext)
+export function OptionPlanet({ name, route }: OptionPlanetProps) {
+  const { setActiveTheme, currentPage, setCurrentPage } =
+    useContext(PlanetsContext)
   return (
     <NavLink
-      to={`${props.route}`}
-      title={props.name}
-      onClick={() => setActiveTheme('overview')}
+      to={`${route}`}
+      title={name}
+      onClick={() => {
+        setCurrentPage(name.toLowerCase())
+        setActiveTheme('overview')
+      }}
     >
-      <OptionContainer>{props.name}</OptionContainer>
+      <OptionContainer
+        className={`${
+          currentPage === name.toLowerCase() ? 'active' : ''
+        } ${name.toLowerCase()}`}
+      >
+        {name}
+      </OptionContainer>
     </NavLink>
   )
 }

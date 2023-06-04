@@ -5,11 +5,11 @@ interface ItemsListProps {
   data: string
 }
 
-export function ItemList(props: ItemsListProps) {
+export function ItemList({ label, data }: ItemsListProps) {
   return (
     <Container>
-      <Paragraph>{props.label}</Paragraph>
-      <Heading>{props.data}</Heading>
+      <Paragraph>{label}</Paragraph>
+      <Heading>{data}</Heading>
     </Container>
   )
 }

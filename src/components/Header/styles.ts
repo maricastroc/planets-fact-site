@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   width: 100%;
 
   @media (min-width: 1015px) {
-    width: 100%;
+    width: 100vw;
     padding: 1.5rem 3rem 1.5rem;
     flex-direction: row;
     justify-content: space-between;
@@ -28,7 +28,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1015px) {
-    width: 100%;
+    width: 100vw;
     padding: 0;
   }
 `
@@ -45,6 +45,7 @@ export const Heading = styled.h1`
   }
 
   @media (min-width: 1015px) {
+    max-width: 100vw;
     text-align: left;
   }
 `
@@ -100,7 +101,7 @@ export const DesktopPlanetsContainer = styled.div`
     margin-top: 1rem;
     align-self: center;
     justify-content: flex-end;
-    width: 100%;
+    max-width: 100vw;
     margin-bottom: 0;
   }
 `

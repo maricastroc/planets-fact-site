@@ -57,10 +57,10 @@ export function PlanetPage(props: PlanetDataProps) {
             <PlanetSlide
               title={props.name}
               image={props.imgPlanet}
-              image_geology={props.imgGeology}
+              imageGeology={props.imgGeology}
               content={props.overviewContent}
               source={props.overviewSource}
-              btn_desktop={buttonDesktop.map((button, index) => (
+              btnDesktop={buttonDesktop.map((button, index) => (
                 <BtnDesktop
                   key={index}
                   onChosen={() => {
@@ -79,10 +79,10 @@ export function PlanetPage(props: PlanetDataProps) {
             <PlanetSlide
               title={props.name}
               image={props.imgInternal}
-              image_geology={props.imgGeology}
+              imageGeology={props.imgGeology}
               content={props.structureContent}
               source={props.structureSource}
-              btn_desktop={buttonDesktop.map((button, index) => (
+              btnDesktop={buttonDesktop.map((button, index) => (
                 <BtnDesktop
                   key={index}
                   onChosen={() => {
@@ -101,10 +101,10 @@ export function PlanetPage(props: PlanetDataProps) {
             <PlanetSlide
               title={props.name}
               image={props.imgPlanet}
-              image_geology={props.imgGeology}
+              imageGeology={props.imgGeology}
               content={props.geologyContent}
               source={props.geologySource}
-              btn_desktop={buttonDesktop.map((button, index) => (
+              btnDesktop={buttonDesktop.map((button, index) => (
                 <BtnDesktop
                   key={index}
                   onChosen={() => {
