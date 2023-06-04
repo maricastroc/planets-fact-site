@@ -20,10 +20,15 @@ interface ItemProps {
 }
 
 export function Item({ title, labelColor, route }: ItemProps) {
-  const { setOpenList } = useContext(PlanetsContext)
+  const { setOpenList, setCurrentPage } = useContext(PlanetsContext)
 
   return (
-    <ItemContainer onClick={() => setOpenList(false)}>
+    <ItemContainer
+      onClick={() => {
+        setCurrentPage(title.toLowerCase())
+        setOpenList(false)
+      }}
+    >
       <NavLink to={`/${route}`} title={title}>
         <Wrapper>
           <Content>

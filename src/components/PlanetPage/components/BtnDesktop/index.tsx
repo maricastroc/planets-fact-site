@@ -19,8 +19,6 @@ export function BtnDesktop({
 }: BtnDesktopProps) {
   const { activeTheme } = useContext(PlanetsContext)
 
-  console.log(activeTheme)
-
   return (
     <Button
       className={`${
