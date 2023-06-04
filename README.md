@@ -37,7 +37,7 @@
 - [styled-components](https://styled-components.com/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [Mobile-first workflow]
+- Mobile-first-workflow
 
 <br/>
 
