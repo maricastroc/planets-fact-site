@@ -80,7 +80,7 @@ export const TextContainer = styled.span`
   }
 `
 
-export const Number = styled.p`
+export const Number = styled.span`
   font-size: 0.56rem;
   font-family: 'Spartan', sans-serif;
   font-weight: 700;
@@ -92,7 +92,7 @@ export const Number = styled.p`
   }
 `
 
-export const Label = styled.p`
+export const Label = styled.span`
   font-size: 0.55rem;
   font-family: 'Spartan', sans-serif;
   font-weight: 700;
