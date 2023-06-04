@@ -14,6 +14,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { PlanetSlide } from '../PlanetSlide'
 import { BtnMobile } from './components/BtnMobile'
 import { BtnDesktop } from './components/BtnDesktop'
+import { Footer } from '../Footer'
 
 export function PlanetPage(props: PlanetDataProps) {
   const { setActiveTheme } = useContext(PlanetsContext)
@@ -127,6 +128,7 @@ export function PlanetPage(props: PlanetDataProps) {
         <ItemList label="Radius" data={props.radius} />
         <ItemList label="Average temp." data={props.temperature} />
       </ItemsListContainer>
+      <Footer />
     </Container>
   )
 }

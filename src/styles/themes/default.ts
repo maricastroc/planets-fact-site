@@ -3,6 +3,7 @@ import { fontFaces } from '../fonts'
 export const defaultTheme = {
   'bg-color': '#070724',
   'base-text': '#FFFFFF',
+  'base-footer': '#D1D1D1',
 
   'dark-gray': '#38384F',
   'light-gray': '#838391',
