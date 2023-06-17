@@ -12,13 +12,13 @@ In this project, I developed an 8-page fact site for all planets in our solar sy
 
 ![challenge-difficulty-intermediate](https://img.shields.io/badge/Difficulty-INTERMEDIATE-f1b604?style=for-the-badge&amp;logo=frontendmentor)
 
-### 📌 What did I learn?
+## 📌 What did I learn?
 
 This was the first project where I had the opportunity to build a carousel with the useEmblaCarousel hook. I found its documentation extremely well written, allowing an easy understanding of the offered resources. Also, in this project, I had the opportunity to practice working with many of ReactJS features, using styled-components, contexts, reducers, routing with React Router DOM. Also, I was able to work deeper with TypeScript, allowing a better organization project's files and preventing bugs.
 
 I intend to incorporate swipe gestures for mobile devices and keyboard functionality to enhance accessibility. Additionally, I aspire to create customized planet SVG files and animate them, thereby creating a visual effect simulating a 3D rotation.
 
-### 🔍 Links
+## 🔍 Links
 [Preview Site](https://maricastroc-planets-fact-site.netlify.app/)
 
 ## 💻 My Process
